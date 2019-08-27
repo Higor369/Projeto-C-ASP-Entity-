@@ -8,11 +8,14 @@ namespace SalesWebMVC.Models
 {
     public class SalesWebMVCContext : DbContext
     {
-        public SalesWebMVCContext (DbContextOptions<SalesWebMVCContext> options)
+        public SalesWebMVCContext(DbContextOptions<SalesWebMVCContext> options)
             : base(options)
         {
         }
 
-        public DbSet<SalesWebMVC.Models.Departments> Departments { get; set; }
+        public DbSet<Departments> Departments { get; set; }
+        public DbSet<Seller> Seller { get; set; } // a classe precisa ser um DBset para ser identificada pelo entity
+        public DbSet<SalesRecord> SalesRecords { get; set; }
+
     }
 }

@@ -18,5 +18,10 @@ namespace SalesWebMVC.Services
         {
             return _context.Seller.ToList<Seller>(); //acessa tabela de vendedores e converte em lista 
         }
+        public void Insert(Seller obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 }

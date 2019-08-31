@@ -13,21 +13,22 @@ namespace SalesWebMVC.Models
         private string v3;
         private DateTime dateTime;
         private double v4;
-        private Departments d2;
+        private Department d2;
 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public double BaseSalary { get; set; }
         public DateTime BirthDate { get; set; }
-        public Departments Department { get; set; }
+        public Department Department { get; set; }
+        public int DepartmentId { get; set; } //id não podera ser null dessa forma 
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller()
         {
         }
 
-        public Seller(int id, string name, string email, double baseSalary, DateTime birthDate, Departments department)
+        public Seller(int id, string name, string email, double baseSalary, DateTime birthDate, Department department)
         {
             Id = id;
             Name = name;
@@ -37,7 +38,7 @@ namespace SalesWebMVC.Models
             Department = department;
         }
 
-        public Seller(int v1, string v2, string v3, DateTime dateTime, double v4, Departments d2)
+        public Seller(int v1, string v2, string v3, DateTime dateTime, double v4, Department d2)
         {
             this.v1 = v1;
             this.v2 = v2;

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using SalesWebMVC.Models;
 
 namespace SalesWebMVC.Models
 {
-    public class SalesWebMVCContext : DbContext
+    public class SalesWebMVCContext : DbContext //classe responsavel por integrar com o Entity
     {
         public SalesWebMVCContext(DbContextOptions<SalesWebMVCContext> options)
             : base(options)

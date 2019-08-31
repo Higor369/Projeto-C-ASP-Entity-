@@ -1,7 +1,44 @@
-﻿
+﻿@model IEnumerable<SalesWebMVC.Models.Seller>
+
 @{
-    ViewData["Title"] = "index";
+    ViewData["Title"] = "Sellers";
 }
 
-<h2>Sellers</h2>
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover" >
+    <thead>
+        <tr>
+            @Html.DisplayNameFor(x => x.Name)
+        </tr>
+        <tr>
+            @Html.DisplayNameFor(x => x.Email)
+        </tr>
+        <tr>
+            @Html.DisplayNameFor(x => x.BirthDate)
+        </tr>
+        <tr>
+            @Html.DisplayNameFor(x => x.BaseSalary)
+        </tr>
+        <tr></tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name) </td>
+            <td>@Html.DisplayFor(modelItem => item.Email) </td>
+            <td>@Html.DisplayFor(modelItem => item.BirthDate) </td>
+            <td>@Html.DisplayFor(modelItem => item.BaseSalary) </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Eetails" asp-route-id="@item.Id">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td> <!--gera a açao de edit com o ID de cada vendedor-->
+
+        </tr>
+        }
+    </tbody>
+
+</table>
 

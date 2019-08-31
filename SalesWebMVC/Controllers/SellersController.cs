@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SalesWebMVC.Services;
 
 namespace SalesWebMVC.Controllers
 {
     public class SellersController : Controller
     {
+        private readonly SellerService _sellerService; // depencia para acessar o servico
         public IActionResult Index()
         {
-            return View();
+            var list = _sellerService.FindAll();
+            return View(list); //instancia a lista na view
+        }
+
+        public SellersController(SellerService sellerService)
+        {
+            _sellerService = sellerService; //instanciando dependencia 
         }
     }
 }

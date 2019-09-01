@@ -14,7 +14,7 @@ namespace SalesWebMVC.Models
         {
         }
 
-        public DbSet<Department> Departments { get; set; }
+        public DbSet<Department> Department { get; set; }
         public DbSet<Seller> Seller { get; set; } // a classe precisa ser um DBset para ser identificada pelo entity
         public DbSet<SalesRecord> SalesRecords { get; set; }
 

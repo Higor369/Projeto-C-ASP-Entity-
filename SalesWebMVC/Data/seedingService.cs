@@ -18,7 +18,7 @@ namespace SalesWebMVC.Data
 
         public void Seed() //popula base de dados caso ela nao esteja populada 
         {
-            if (_context.Departments.Any() ||
+            if (_context.Department.Any() ||
                 _context.Seller.Any() ||
                 _context.SalesRecords.Any()) // se existe algum dado na tabela 
             {
@@ -67,7 +67,7 @@ namespace SalesWebMVC.Data
             SalesRecord r29 = new SalesRecord(29, new DateTime(2018, 10, 23), 12000.0, SaleStatus.Billed, s5);
             SalesRecord r30 = new SalesRecord(30, new DateTime(2018, 10, 12), 5000.0, SaleStatus.Billed, s2);
 
-            _context.Departments.AddRange(d1, d2, d3, d4);
+            _context.Department.AddRange(d1, d2, d3, d4);
 
             _context.Seller.AddRange(s1, s2, s3, s4, s5, s6);
 

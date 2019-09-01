@@ -9,6 +9,5 @@ namespace SalesWebMVC.Models.ViewModels
     {
         public Seller Seller { get; set; }
         public ICollection<Department> Department { get; set; }
-
     }
 }
